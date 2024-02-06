@@ -11,14 +11,14 @@ if(choice == 1):
 elif choice == 2:
     random_word = random.choice(cities);
 else : 
-    print('Invalid Response');
+    print('\nInvalid Response');
 
 tries = len(random_word);
 fails = 0;
 guesses = '';
 while tries > 0:
-    print(f'Remaining tries: {tries}')
-    guess = input('Enter the letter: ');
+    print(f'\nRemaining tries: {tries}')
+    guess = input('\nEnter the letter: ');
     guesses += guess;
     tries -= 1;
     for char in random_word:
@@ -28,5 +28,10 @@ while tries > 0:
             print('_',end=' ');
             fails += 1;
 
-    
+else:
+    if guesses == random_word:
+        print('\n\nCongrats!You won!')  
+    else:
+        print(f'\n\nYou lost!\nThe word was {random_word}');
+
 
